@@ -6,3 +6,7 @@ edition = "2018"
 [dependencies]
 lambda_runtime = "0.2.1"
 serde = { version = "1.0.102", features = ["derive"] }
+
+[[bin]]
+name = "bootstrap"
+path = "src/main.rs"
