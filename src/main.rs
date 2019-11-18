@@ -11,8 +11,7 @@ fn main() -> UnitResult {
 
 #[derive(Deserialize)]
 struct CustomEvent {
-    #[serde(rename = "firstName")]
-    first_name: String,
+    message: String,
 }
 
 #[derive(Serialize)]
@@ -21,7 +20,5 @@ struct CustomOutput {
 }
 
 fn handler(e: CustomEvent, _c: Context) -> Result<CustomOutput, HandlerError> {
-    Ok(CustomOutput {
-        message: format!("Hello, {}!", e.first_name),
-    })
+    Ok(CustomOutput { message: e.message })
 }
