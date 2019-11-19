@@ -6,7 +6,7 @@ import subprocess
 def shell(line):
     subprocess.run(line, shell=True)
 
-shell("zip -j lambda.zip ./index.js")
+shell("zip -j lambda.zip ./src/index.js")
 
 shell("mkdir -p ./build")
 
