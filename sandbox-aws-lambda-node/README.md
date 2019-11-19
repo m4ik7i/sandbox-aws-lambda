@@ -1,2 +1,2 @@
 # sandbox-aws-lambda-node
-Sandbox AWS Lambda Node
+Sandbox AWS Lambda Node.js
