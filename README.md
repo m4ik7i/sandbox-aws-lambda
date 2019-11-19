@@ -1,2 +1,2 @@
-# sandbox-aws-lambda-rust
-Sandbox AWS Lambda Rust
+# sandbox-aws-lambda
+Sandbox AWS Lambda
