@@ -8,21 +8,20 @@ import sandbox.Lambda.CustomOutput;
 
 public class Lambda implements RequestHandler<CustomEvent, CustomOutput> {
 
-  @Override
-  public CustomOutput handleRequest(CustomEvent event, Context context) {
+    @Override
+    public CustomOutput handleRequest(CustomEvent event, Context context) {
+        CustomOutput output = new CustomOutput();
+        output.message = event.message;
+        
+        return output;
+    }
 
-    CustomOutput output = new CustomOutput();
-    output.message = event.message;
+    public static class CustomEvent {
+        public String message;
+    }
 
-    return output;
-  }
-
-  public static class CustomEvent {
-    public String message;
-  }
-
-  public static class CustomOutput {
-    public String message;
-  }
+    public static class CustomOutput {
+        public String message;
+    }
 
 }
