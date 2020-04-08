@@ -1,9 +1,10 @@
 use lambda_runtime::{error::HandlerError, lambda, Context};
 use serde::{Deserialize, Serialize};
 
-type UnitResult = Result<(), Box<dyn std::error::Error>>;
+type Error = Box<dyn std::error::Error + Send + Sync>;
+type Result<T, E = Error> = std::result::Result<T, E>;
 
-fn main() -> UnitResult {
+fn main() -> Result<()> {
     lambda!(handler);
 
     Ok(())
