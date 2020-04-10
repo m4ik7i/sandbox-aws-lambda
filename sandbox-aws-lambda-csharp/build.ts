@@ -1,6 +1,6 @@
 #!/usr/bin/env deno --allow-run
 
-import { run } from "./deps.ts";
+import { run } from "./build-deps.ts";
 
 try {
   await run("dotnet publish -c Release");

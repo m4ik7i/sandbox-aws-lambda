@@ -1,6 +1,6 @@
 #!/usr/bin/env deno --allow-run
 
-import { run } from "./deps.ts";
+import { run } from "./build-deps.ts";
 
 try {
   await run("sh rust-musl-builder.sh cargo build --release");

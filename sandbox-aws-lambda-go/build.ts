@@ -1,6 +1,6 @@
 #!/usr/bin/env deno --allow-run
 
-import { run } from "./deps.ts";
+import { run } from "./build-deps.ts";
 
 try {
   await run("GOOS=linux go build -o main ./src/main.go");
