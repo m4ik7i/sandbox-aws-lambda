@@ -1,6 +1,6 @@
 #!/usr/bin/env deno --allow-run
 
-import { run } from "./build-deps.ts";
+import { run } from "./build_deps.ts";
 
 try {
   await run("zip -j lambda.zip ./src/index.js");
