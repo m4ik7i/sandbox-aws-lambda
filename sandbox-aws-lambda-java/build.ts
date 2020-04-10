@@ -1,10 +1,13 @@
-#!/usr/bin/env deno --allow-read --allow-run
+#!/usr/bin/env deno --allow-net --allow-read --allow-run
 
 const deps = {
+  path: await import("https://deno.land/std/path/mod.ts"),
   run: (await import("../run.ts")).default,
 };
 
-const { run } = deps;
+const { path: { dirname }, run } = deps;
+
+Deno.chdir(dirname(location.pathname));
 
 try {
   await run("./gradlew build --no-daemon");
