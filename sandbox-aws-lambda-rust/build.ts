@@ -15,4 +15,5 @@ try {
   await run("zip -j lambda.zip ./bootstrap");
 } catch (err) {
   console.error(err);
+  Deno.exit(1);
 }

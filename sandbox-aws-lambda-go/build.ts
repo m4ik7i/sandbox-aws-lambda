@@ -17,4 +17,5 @@ try {
   await run("zip -j lambda.zip ./main");
 } catch (err) {
   console.error(err);
+  Deno.exit(1);
 }

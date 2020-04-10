@@ -13,4 +13,5 @@ try {
   await run("./gradlew build --no-daemon");
 } catch (err) {
   console.error(err);
+  Deno.exit(1);
 }

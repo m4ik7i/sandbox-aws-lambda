@@ -15,4 +15,5 @@ try {
   await run("mv lambda.zip ./build");
 } catch (err) {
   console.error(err);
+  Deno.exit(1);
 }
