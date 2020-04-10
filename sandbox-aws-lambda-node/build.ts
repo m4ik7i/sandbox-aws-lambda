@@ -1,6 +1,10 @@
-#!/usr/bin/env deno --allow-run
+#!/usr/bin/env deno --allow-read --allow-run
 
-import { run } from "./build_deps.ts";
+const deps = {
+  run: (await import("../run.ts")).default,
+};
+
+const { run } = deps;
 
 try {
   await run("zip -j lambda.zip ./src/index.js");

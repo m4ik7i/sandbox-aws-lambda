@@ -1,4 +1,4 @@
-const run = async (cmd: string): Promise<void> => {
+export const run = async (cmd: string): Promise<void> => {
   const { success, code } = await Deno.run(
     { cmd: ["sh", "-c", cmd] },
   ).status();
