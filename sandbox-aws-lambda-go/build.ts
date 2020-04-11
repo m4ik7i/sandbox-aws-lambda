@@ -1,13 +1,14 @@
 #!/usr/bin/env deno --allow-net --allow-read --allow-run
 
+await import("https://deno.land/std/path/mod.ts").then(({ dirname }) => {
+  Deno.chdir(dirname(location.pathname));
+});
+
 const deps = {
-  path: await import("https://deno.land/std/path/mod.ts"),
   run: (await import("../run.ts")).default,
 };
 
-const { path: { dirname }, run } = deps;
-
-Deno.chdir(dirname(location.pathname));
+const { run } = deps;
 
 try {
   await run("GOOS=linux go build -o main ./src/main.go");
